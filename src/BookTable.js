@@ -5,18 +5,16 @@ import SearchBar from "./SearchBar";
 
 const BookTable = props => {
   const [query, setQuery] = useState("");
-  const filteredBooks = props.books.filter(book =>
-    book.title
-      .toLowerCase()
-      .includes(query.toLowerCase())
-  );
-  const bookRows = filteredBooks.map(book => (
+
+
+
+  const bookRows = props.books.map(book => (
     <BookRow key={book.title} book={book} />
   ));
   return (
     <div>
        <h3>Books</h3>
-       <SearchBar handleFilter={setQuery} />
+      
     <table className="mt-3 table">
       
       <thead>
